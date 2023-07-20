@@ -11,6 +11,7 @@ import DidMountState from "./pages/LifeCycle/DidMountState";
 import EffectCase from "./pages/LifeCycle/EffectCase";
 import Context from "./pages/Context/index";
 import ContextDemo1 from "./pages/Context/demo1";
+import Test from "./pages/Test/index";
 const Home = lazy(() => import(/* webpackChunkName: 'home'*/ "./pages/Home")); //给 chunk 包起名字
 const About = lazy(() =>
   import(/* webpackChunkName: 'about'*/ "./pages/About")
@@ -28,7 +29,9 @@ function App() {
     { name: "EffectCase", component: EffectCase },
     { name: "Context", component: Context },
     { name: "ContextDemo1", component: ContextDemo1 },
+    { name: "Test", component: Test },
   ];
+  console.log("我是 app.js里的打印");
   return (
     <div className="container">
       <ul className="leftBar">

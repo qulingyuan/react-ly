@@ -9,5 +9,4 @@
             "webRoot": "${workspaceFolder}"
         },
     ],
-    "compounds": []
 }

@@ -290,28 +290,27 @@ import React, {
 //   );
 // }
 
-export default class Index extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { num: 0, name: "ling" };
-    // this.node = React.createRef();
-  }
+const QState = (props) => {
+  console.log("刷新");
+  let initialState = () => {
+    console.log("重度计算操作...");
+  };
+  const [state, setState] = useState(() => initialState());
+  return (
+    <div>
+      <p>{props.count}</p>
+      <p>{state}</p>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        {/* <div
-          ref={(node) => {
-            this.node = node;
-            console.log("此时的参数是什么：", this.node);
-          }}
-        >
-          ref元素节点
-        </div>
-        <button onClick={() => this.setState({ num: this.state.num + 1 })}>
-          点击
-        </button> */}
-      </div>
-    );
-  }
-}
+const About = (props) => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>{"增加"}</button>
+      <QState count={count} />
+    </div>
+  );
+};
+export default About;
